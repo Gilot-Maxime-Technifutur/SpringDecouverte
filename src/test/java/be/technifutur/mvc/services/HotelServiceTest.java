@@ -1,6 +1,6 @@
-package be.bstorm.akimts.mvc.services;
+package be.technifutur.mvc.services;
 
-import be.bstorm.akimts.mvc.models.Hotel;
+import be.technifutur.mvc.models.Hotel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package be.bstorm.akimts.mvc;
+package be.technifutur.mvc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

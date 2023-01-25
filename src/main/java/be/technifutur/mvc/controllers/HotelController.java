@@ -1,9 +1,8 @@
-package be.bstorm.akimts.mvc.controllers;
+package be.technifutur.mvc.controllers;
 
-import be.bstorm.akimts.mvc.models.HotelForm;
-import be.bstorm.akimts.mvc.services.HotelService;
+import be.technifutur.mvc.models.HotelForm;
+import be.technifutur.mvc.services.HotelService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

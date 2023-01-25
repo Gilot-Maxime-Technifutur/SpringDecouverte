@@ -1,19 +1,16 @@
-package be.bstorm.akimts.mvc.controllers;
+package be.technifutur.mvc.controllers;
 
-import be.bstorm.akimts.mvc.models.CalculatriceForm;
-import be.bstorm.akimts.mvc.patterns.Personne;
-import be.bstorm.akimts.mvc.services.CalculatriceService;
-import jakarta.validation.Valid;
+import be.technifutur.mvc.models.CalculatriceForm;
+import be.technifutur.mvc.patterns.Personne;
+import be.technifutur.mvc.services.CalculatriceService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 @Controller

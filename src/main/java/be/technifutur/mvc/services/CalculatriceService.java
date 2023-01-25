@@ -1,6 +1,6 @@
-package be.bstorm.akimts.mvc.services;
+package be.technifutur.mvc.services;
 
-import be.bstorm.akimts.mvc.models.CalculatriceForm;
+import be.technifutur.mvc.models.CalculatriceForm;
 import org.springframework.stereotype.Service;
 
 @Service

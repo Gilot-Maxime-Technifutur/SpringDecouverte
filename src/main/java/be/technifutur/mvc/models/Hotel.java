@@ -1,4 +1,4 @@
-package be.bstorm.akimts.mvc.models;
+package be.technifutur.mvc.models;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package be.bstorm.akimts.mvc.patterns;
+package be.technifutur.mvc.patterns;
 
 import lombok.Data;
 

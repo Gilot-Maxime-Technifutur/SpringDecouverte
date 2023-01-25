@@ -1,7 +1,6 @@
-package be.bstorm.akimts.mvc.services;
+package be.technifutur.mvc.services;
 
-import be.bstorm.akimts.mvc.models.Room;
-import org.springframework.stereotype.Component;
+import be.technifutur.mvc.models.Room;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

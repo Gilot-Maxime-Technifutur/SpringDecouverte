@@ -1,15 +1,13 @@
-package be.bstorm.akimts.mvc.controllers;
+package be.technifutur.mvc.controllers;
 
 
-import be.bstorm.akimts.mvc.models.Hotel;
-import be.bstorm.akimts.mvc.models.Room;
-import be.bstorm.akimts.mvc.services.RoomService;
+import be.technifutur.mvc.models.Room;
+import be.technifutur.mvc.services.RoomService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/room")
