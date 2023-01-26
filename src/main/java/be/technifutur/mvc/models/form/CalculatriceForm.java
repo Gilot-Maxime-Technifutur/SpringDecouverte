@@ -1,4 +1,4 @@
-package be.technifutur.mvc.models;
+package be.technifutur.mvc.models.form;
 
 import jakarta.validation.constraints.Positive;
 import lombok.Data;

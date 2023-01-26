@@ -1,6 +1,6 @@
 package be.technifutur.mvc.controllers;
 
-import be.technifutur.mvc.models.CalculatriceForm;
+import be.technifutur.mvc.models.form.CalculatriceForm;
 import be.technifutur.mvc.patterns.Personne;
 import be.technifutur.mvc.services.CalculatriceService;
 import org.springframework.stereotype.Controller;

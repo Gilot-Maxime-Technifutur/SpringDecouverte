@@ -1,6 +1,6 @@
 package be.technifutur.mvc.services;
 
-import be.technifutur.mvc.models.CalculatriceForm;
+import be.technifutur.mvc.models.form.CalculatriceForm;
 import org.springframework.stereotype.Service;
 
 @Service

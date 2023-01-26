@@ -1,6 +1,6 @@
 package be.technifutur.mvc.controllers;
 
-import be.technifutur.mvc.models.HotelForm;
+import be.technifutur.mvc.models.form.HotelForm;
 import be.technifutur.mvc.services.HotelService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;

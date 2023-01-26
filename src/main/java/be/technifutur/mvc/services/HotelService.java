@@ -1,7 +1,7 @@
 package be.technifutur.mvc.services;
 
 import be.technifutur.mvc.models.Hotel;
-import be.technifutur.mvc.models.HotelForm;
+import be.technifutur.mvc.models.form.HotelForm;
 import be.technifutur.mvc.models.Room;
 import org.springframework.stereotype.Service;
 
