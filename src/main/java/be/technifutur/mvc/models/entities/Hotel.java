@@ -33,9 +33,9 @@ public class Hotel {
     @Column(nullable = false, length = 100)
     private String address;
 //--------------------------------------------------//
-    @OneToMany(mappedBy = "hotel", orphanRemoval = true)
+    @OneToMany(mappedBy = "hotel")
     private Set<Room> rooms = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "hotel", orphanRemoval = true)
+    @OneToMany(mappedBy = "hotel")
     private Set<WorkDetail> workers = new LinkedHashSet<>();
 }

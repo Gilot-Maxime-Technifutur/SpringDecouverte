@@ -4,9 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CrudRepository<TENTITY, TID> {
-    Optional<TENTITY> getOne(TID id);
+    Optional<TENTITY> getById(TID id);
     List<TENTITY> getAll();
-    void add(TENTITY toInsert);
-    void update(TENTITY updated, TID toUpdate);
-    void remove(TID toDelete);
+    void save(TENTITY entity);
+    boolean existsById(TID id);
+    void delete(TENTITY entity);
+    void deleteById(TID toDelete);
 }

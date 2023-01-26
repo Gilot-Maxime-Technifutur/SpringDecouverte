@@ -21,18 +21,25 @@ public class ReservationRepoImpl extends AbstractCrudRepoImpl<Reservation, Long>
 
     @Override
     public Set<Reservation> getFromMonth(Month month, int year) {
-        String qlQuerry = """
-                SELECT r
-                FROM Reservation r
-                WHERE ?1 BETWEEN r.begin.getYear() AND r.end.getYear()
-                    AND ?2 BETWEEN r.begin.getMonth() AND r.end.getMonth()
-                """;
-        TypedQuery<Reservation> query = em.createQuery(qlQuerry, Reservation.class);
-        query.setParameter(1, year);
-        query.setParameter(2, month.getValue());
+        CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Reservation> criteriaQuery = criteriaBuilder.createQuery(Reservation.class);
+        Root<Reservation> root = criteriaQuery.from(Reservation.class);
 
-        Set<Reservation> result = query.getResultStream().collect(Collectors.toSet());
+        boolean isLeapYear = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+        LocalDateTime dateD = LocalDateTime.of(year,month,1,0,0,0);
+        LocalDateTime dateF = LocalDateTime.of(year,month,month.length(isLeapYear),23,59,59,999_999_999);
+
+        criteriaQuery
+                .select(root)
+                .where(criteriaBuilder.and(
+                                criteriaBuilder.lessThanOrEqualTo(root.get("begin"), dateF),
+                                criteriaBuilder.greaterThanOrEqualTo(root.get("end"), dateD)
+                        )
+                );
+
+        Set<Reservation> result = em.createQuery(criteriaQuery).getResultStream().collect(Collectors.toSet());
         em.clear();
+
         return result;
     }
 
@@ -45,8 +52,11 @@ public class ReservationRepoImpl extends AbstractCrudRepoImpl<Reservation, Long>
         criteriaQuery
                 .select(criteriaBuilder.count(root))
                 .where(criteriaBuilder.and(
-                        criteriaBuilder.lessThan(root.get("begin"), date),
-                        criteriaBuilder.greaterThan(root.get("end"), date)
+                            criteriaBuilder.isTrue(root.get("breakfast")),
+                            criteriaBuilder.and(
+                                    criteriaBuilder.lessThan(root.get("begin"), date),
+                                    criteriaBuilder.greaterThan(root.get("end"), date)
+                            )
                 ));
 
         return em.createQuery(criteriaQuery).getSingleResult().intValue();
@@ -60,7 +70,7 @@ public class ReservationRepoImpl extends AbstractCrudRepoImpl<Reservation, Long>
 
         criteriaQuery
                 .select(root)
-                .where(criteriaBuilder.greaterThan(root.get("begin"), LocalDate.now()));
+                .where(criteriaBuilder.greaterThan(root.get("begin"), LocalDateTime.now()));
 
         Set<Reservation> result = em.createQuery(criteriaQuery).getResultStream().collect(Collectors.toSet());
         em.clear();

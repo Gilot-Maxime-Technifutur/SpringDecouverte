@@ -44,7 +44,6 @@ public class Room {
     @Column(nullable = false)
     private RoomView view;
 
-    @Column(nullable = false)
     private Boolean available;
 
     @Enumerated(EnumType.STRING)
